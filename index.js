@@ -12,7 +12,7 @@ const exportFromotroejem= require("./otroejem")
 // console.log(persona.persona);// accedemos al objeto persona dentro de persona{ name: 'Maxi', edad: '24', cinturon: 'marron' }
 // console.log("Me llamo ",persona.persona.name); // accedemos a la propiedad  name dentro del  objeto persona dentro de persona
 // console.log("soy cinturon",persona.persona.cinturon);// accedemos a la propiedad  cinturon  dentro del  objeto persona dentro de persona
-console.log({exportFromotroejem})
+// console.log({exportFromotroejem})
 function requestController (){
     // Logica de nuestra funcion 
     // console.log({__dirname}); // repuesta de la funcion controller 
