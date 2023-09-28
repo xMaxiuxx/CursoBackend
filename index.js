@@ -3,7 +3,7 @@
 require("dotenv").config()
 // Variable para definir http e importar el mòdulo http 
 const http = require("http");
-const exportFromotroejem= require("./otroejem")
+// const exportFromotroejem= require("./otroejem")
 
 // require es una funcion 
 //!TODO una palabra seguida de parentesis es una funcion donde se le pasan 1 2 o 3 argumentos o ninguno Ejemplo require()
@@ -29,5 +29,5 @@ const server = http.createServer(requestController)
 const PORT = process.env.PORT
 // va a escuchar en el puerto 3000
 server.listen(PORT) 
-console.log("Escuchando en el puerto " , PORT);//!dsqda!
+console.log("Escuchando en el puerto " , PORT);
 
