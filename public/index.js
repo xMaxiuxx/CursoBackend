@@ -1,3 +1,4 @@
+require("dotenv").config()
 console.log("Este JVS Va a ser interpretado por el Navegador");
 process.env.PORT
 // Obtener los elementos del html y guardarlo en constantes
@@ -7,4 +8,4 @@ button.addEventListener("click", function(){
     console.log("CLICK");
     // con la funcion fetch podemos hacer peticiones http 
     fetch(`http://localhost:${PORT}/users`)
-})
+})  
