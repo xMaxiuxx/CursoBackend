@@ -1,33 +1,25 @@
-// Requerimos dotenv y usamos su propiedad de configuracion ()
-// dotenv tiene las variables de entorno 
+//!TODO ASI CREAMOS UN SERVIDOR CON EXPRESS 
+ //! Primero requiere express 
+ const express = require('express')
+ //TODO requerimos la variable de entorno
 require("dotenv").config()
-// Variable para definir http e importar el mòdulo http 
-const http = require("http");
-// const exportFromotroejem= require("./otroejem")
+const app = express()
+const port = process.env.PORT
+//! Servir archivos estaticos 
+app.use(express.static('public'));
 
-// require es una funcion 
-//!TODO una palabra seguida de parentesis es una funcion donde se le pasan 1 2 o 3 argumentos o ninguno Ejemplo require()
-//! require() ==> importa codigo busca codigo, requiere puede estar en nuestros archivos o ser de una libreria externa 
-// Create server recibe como parametro un requestlistener 
+//TODO Esta configurando rutas 
+app.get('/',  function (req, res)  {
+    // respuesta tiene un metodo .send porque express asi lo quiso
+  res.send('Hello World!')
+})
+app.get('/users',  function (req, res)  {
+    // respuesta tiene un metodo .send porque express asi lo quiso
+  res.send([{name : "Maxi" }, {name: "Marcos"}])
+})
 
- //!TODO Usamos DOT NOTATION notacion de puntos para acceder a la propiedad de un objeto ejemplo quiero acceder al nombre de (persona)
- //!TODO mostramos el objeto persona => agregamos . punto ==> persona.persona = con esto accedemos al objeto persona ==> añadimos otro . punto y accedemos a la propiedad del segundo objeto persona en este caso . name = persona.persona.name === muestra el name del objeto persona
-
-// console.log(exportFromotroejem.persona);// accedemos al objeto persona dentro de persona{ name: 'Maxi', edad: '24', cinturon: 'marron' }
-// console.log("Me llamo ",exportFromotroejem.persona.name); // accedemos a la propiedad  name dentro del  objeto persona dentro de persona
-// console.log("soy cinturon",exportFromotroejem.persona.cinturon);// accedemos a la propiedad  cinturon  dentro del  objeto persona dentro de persona
-
-function requestController (){
-    // Logica de nuestra funcion 
-    console.log("Mi Primer Deploy!!");
-}
-
-//Configuracion del servidor 
-const server = http.createServer(requestController)
-
-// Defiinimos la varaible de entorno PORT 
-const PORT = process.env.PORT
-// va a escuchar en el puerto 3000
-server.listen(PORT) 
-console.log("Escuchando en el puerto " , PORT);
-
+//TODO Pone a escuchar la app en un puerto  
+// Funcion flecha o arrowfunction ()=>{} 
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
